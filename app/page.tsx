@@ -9,6 +9,7 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
@@ -20,12 +21,12 @@ export default async function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#080b14] text-white">
       <header className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6 sm:px-10">
-        <a href="/" className="flex items-center gap-2 text-lg font-semibold tracking-tight">
+        <Link href="/" className="flex items-center gap-2 text-lg font-semibold tracking-tight">
           <span className="flex size-8 items-center justify-center rounded-lg bg-cyan-400 text-[#080b14]">
             <Link2 className="size-4" />
           </span>
           Shortly
-        </a>
+        </Link>
         <div className="flex items-center gap-3">
           <Show when="signed-out">
             <SignInButton mode="modal">
@@ -96,7 +97,7 @@ export default async function Home() {
                 ["short.ly/launch", "Product launch", "2,481 clicks"],
                 ["short.ly/guide", "Getting started guide", "1,204 clicks"],
                 ["short.ly/news", "Monthly newsletter", "892 clicks"],
-              ].map(([link, label, clicks], index) => (
+              ].map(([link, label, clicks]) => (
                 <div key={link} className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#101522] p-4">
                   <div className="flex min-w-0 items-center gap-3">
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-cyan-300/10 text-cyan-300">
